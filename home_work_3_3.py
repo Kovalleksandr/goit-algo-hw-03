@@ -2,25 +2,24 @@ import re
 
 def normalize_phone(phone_number):
     # Видаляємо всі зайві символи, залишаючи тільки цифри та '+'
-    cleaned_number = re.sub(r"[^\d+]", "", phone_number)
+    cleaned_number = re.sub(r'[^\d+]', '', phone_number)
 
     # Якщо "+380", залишаємо без змін
-    if cleaned_number.startswith("+380"):
+    if cleaned_number.startswith('+380'):
         return cleaned_number
 
     # Якщо "380", додаємо "+"
-    if cleaned_number.startswith("380"):
-        return f"+{cleaned_number}"
+    if cleaned_number.startswith('380'):
+        return '+' + cleaned_number
 
     # Якщо починається з "0", додаємо "+38"
-    if cleaned_number.startswith("0"):
-        return f"+38{cleaned_number[1:]}"
+    if cleaned_number.startswith('0'):
+        return '+38' + cleaned_number
 
     # Якщо номер містить тільки 9 або 10 цифр, додаємо "+38"
     if len(cleaned_number) in [9, 10]:
         return f"+38{cleaned_number}"
 
-    
     return cleaned_number
 
 # Приклад:

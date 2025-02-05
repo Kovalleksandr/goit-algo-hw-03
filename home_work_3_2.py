@@ -1,14 +1,19 @@
 import random
 
 def get_numbers_ticket(min: int, max: int, quantity: int):
-    if not (1 <= min <= 1000) or not (1 <= max <= 1000) or not (min <= max) or not (min <= quantity <= max):
+    if not (1 <= min <= 1000) or not (1 <= max <= 1000) or not (min <= max) or not ((max-min) >= quantity):
         return []
     numbers = random.sample(range(min, max + 1), quantity)
 
     return sorted(numbers)
 
-print(get_numbers_ticket(1, 49, 6))
-print(get_numbers_ticket(60, 1, 5))
+print(get_numbers_ticket(1, 20, 6))
+print(get_numbers_ticket(10, 4, 5))
+print(get_numbers_ticket(10, 14, 6))
+print(get_numbers_ticket(-10, 10, 5))
+print(get_numbers_ticket(1000, 1200, 3))
+
+
 
 '''
 Додав перевірку (min <= max)

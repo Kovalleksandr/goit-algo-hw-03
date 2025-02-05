@@ -8,6 +8,7 @@ def get_numbers_ticket(min: int, max: int, quantity: int):
     return sorted(numbers)
 
 print(get_numbers_ticket(1, 20, 6))
+print(get_numbers_ticket(10, 20, 6))
 print(get_numbers_ticket(10, 4, 5))
 print(get_numbers_ticket(10, 14, 6))
 print(get_numbers_ticket(-10, 10, 5))

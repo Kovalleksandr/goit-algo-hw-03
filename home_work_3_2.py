@@ -8,7 +8,7 @@ def get_numbers_ticket(min: int, max: int, quantity: int):
     return sorted(numbers)
 
 print(get_numbers_ticket(1, 20, 6))
-print(get_numbers_ticket(10, 20, 6))
+print(get_numbers_ticket(10, 20, 6)
 print(get_numbers_ticket(10, 4, 5))
 print(get_numbers_ticket(10, 14, 6))
 print(get_numbers_ticket(-10, 10, 5))
@@ -17,6 +17,15 @@ print(get_numbers_ticket(1000, 1200, 3))
 
 
 '''
+
+Змінив перевірку (min <= quantity <= max) на нову перевірку ((max-min) >= quantity)
+-----------------------------------------------------------------------------------
+перевірка (min <= quantity <= max) некоректно працює з прикладом (10, 20, 6), тому 
+змінено на ((max-min) >= quantity)
+
+
+
+
 Додав перевірку (min <= max)
 --------------------------------------------
 
